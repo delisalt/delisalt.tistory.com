@@ -1,90 +1,239 @@
-
 <!DOCTYPE html>
 <html lang="ko">
+<!-- TO DO 
+	폰트 사이즈 결정 (h1, h2 크기)
+-->
 <head>
-	<title>Bootstrap Test Page</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- 추가 확인 필요 -->
-	<script language="javascript" type="text/javascript"  src="./images/is_base.js"></script>
 	<script type="text/javascript" src='./images/jquery-1.11.2.min.js'></script>
 	<script type="text/javascript" src='./images/bootstrap.min.js'></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="./images/bootstrap.css" />
+<!--	<link rel="stylesheet" media="screen" type="text/css" href="./style.css" /> -->
+	<title>[##_title_##] :: [##_page_title_##]</title>
 	<style>
 		@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 		body { font-family: 'Nanum Gothic',Malgun Gothic,Tahoma; }
-		#top_header { background: rgba(255,255,255,0.7); position: fixed; top: 0px; z-index: 10; width: 100%; display:none; }
-		#logo_image { position: relative; left: 25px; height: 40px; width: auto; margin-top: 5px; margin-bottom: 5px; cursor:pointer;}
-		#category_header { height: 200px; background: url('./images/bgcAbout.gif'); margin-top: 55px;}
-		#article_category { text-align:left; color:#d0e7d6; font-size: 15px; width: 100%; margin-top:10px; } 
-		#article_title { text-align:center; color:white; font-size: 30px; font-weight: bold; width: 100%; height: 120px; margin-top:20px; } 
-		#article_date { text-align:right; color:white; font-size: 20px; font-family: Raleway, 'Nanum Gothic'; width: 100%; } 
-		#test {height : 800px;}
-		#testt {color:tomato; height: 50px; .center-block();}
+		#logo_image { height: 40px; width: auto; margin: 5px 0px 5px 15px; cursor:pointer;}
+		#category_header { height: 200px; color:#d0e7d6; background: url('./images/bgcAbout.gif'); margin: 55px 0px 15px 0px;}
+		#article_category { text-align:left; font-size: 15px; width: 100%; margin-top:10px; } 
+		#article_category a, #article_admin a{ color:#d0e7d6; } 
+		#article_title { text-align:center; font-size: 30px; font-weight: bold; width: 100%; height: 120px; margin-top:20px; } 
+		#article_date { text-align:right; font-size: 20px; font-family: Raleway, 'Nanum Gothic'; width: 100%; } 
+		#article_admin { top: -50px; position: absolute; color:#d0e7d6;}
+		#category_dummy, #tistorytoolbarid, #article_category_dummy, #article_date_dummy, #article_title_dummy {display: none;}
+		.article { line-height: 190%; }
+		.article blockquote { padding: 0 10px; margin: 10px 0px 10px 20px; font-size: 15px;}  
 	</style>
 </head>
 <body>
 <s_t3>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		  </button>
-		  <a class="navbar-brand" href="#">Brand</a>
+	<!-- Navigation Bar -->
+	<nav class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="./"><img id="logo_image" src="./images/logo.png" alt="고마워서 만든 블로그"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul id="ttoolbar_view" class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">분류 보기<span class="caret"></span></a>
+						<ul id="category_view" class="dropdown-menu" role="menu">
+							<li class="divider"></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
-			<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-			<li><a href="#">Link</a></li>
-			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-			  <ul class="dropdown-menu" role="menu">
-				<li><a href="#">Action</a></li>
-				<li><a href="#">Another action</a></li>
-				<li><a href="#">Something else here</a></li>
-				<li class="divider"></li>
-				<li><a href="#">Separated link</a></li>
-				<li class="divider"></li>
-				<li><a href="#">One more separated link</a></li>
-			  </ul>
-			</li>
-		  </ul>
-		  <ul class="nav navbar-nav navbar-right">
-			<li><a href="#">Link</a></li>
-			<li class="dropdown">
-			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-			  <ul class="dropdown-menu" role="menu">
-				<li><a href="#">Action</a></li>
-				<li><a href="#">Another action</a></li>
-				<li><a href="#">Something else here</a></li>
-				<li class="divider"></li>
-				<li><a href="#">Separated link</a></li>
-			  </ul>
-			</li>
-		  </ul>
-		</div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
 	</nav>
-	<div id="top_header">
-		<img id="logo_image" onclick="moveTop();" src="./images/logo.png" alt="고마워서 만든 블로그">
-	</div>
-	<div id="category_header" class="container-fluid">
-		<div id="testt" class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-			<div id="article_category"><span class="glyphicon glyphicon-home"></span> / 해봤더니</div>
-			<div id="article_title">...</div>
-			<div id="article_date">2015/04/20 18:39</div>
+	<!-- Navigation Bar Close-->
+	<!-- Header -->
+	<div id="header">
+		<div id="category_header" class="container-fluid">
+			<div id="testt" class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+				<div id="article_category"><span class="glyphicon glyphicon-home"></span> / </div>
+				<div id="article_title"></div>
+				<div id="article_date"></div>
+			</div>
 		</div>
 	</div>
-	<div id="test">	
+	<!-- Header Close-->
+	<!-- Content-->
+	<div id="content" class="container-fluid">
+		<div class="row">
+			<!-- PROTECTED ARTICLE -->
+			<s_article_protected>
+				<b class="rtop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+				<div class="entryProtected">
+					<div class="titleWrap">
+						<h2><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h2>
+						<span class="date">[##_article_rep_date_##]</span>
+					</div>
+						<div class="protected_box">
+							<div class="text">
+								<p>PROTECTED ARTICLE. TYPE THE PASSWORD.</p>
+								<p><input id="[##_article_password_##]" name="[##_article_password_##]" type="password" onkeydown="if (event.keyCode == 13) [##_article_dissolve_##]" /> <input type="button" class="submit" value="SUBMIT" onclick="[##_article_dissolve_##]" /></p>
+							</div>
+						</div>
+						<div class="box_hblank2"></div>
+				</div>
+				<b class="rbottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+				<div class="box_hblank1"></div>
+			</s_article_protected>
+
+			<!-- ARTICLE -->
+			<s_article_rep>
+				<div class="entry col-sm-9">
+					<div class="titleWrap">
+						<span id="article_title_dummy">[##_article_rep_title_##]</span>
+						<span id="article_category_dummy"><a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a> </span>
+						<span id="article_date_dummy">[##_article_rep_date_##]</span>
+						<s_ad_div>
+							<div id="article_admin">
+								<a href="[##_s_ad_m_link_##]">EDIT</a>::[##_s_ad_s1_label_##]::<a href="#" onclick="[##_s_ad_d_onclick_##]">DELETE</a>
+							</div>
+						</s_ad_div>
+					</div><!-- titleWrap close -->
+						<div class="article">
+							[##_article_rep_desc_##]
+						</div>
+						<s_tag_label>
+							<div class="tagTrail">[##_tag_label_rep_##]</div>
+						</s_tag_label>
+						<div class="actionTrail">
+							<div class="tbcm">
+								<a href="#tb" onclick="[##_article_rep_tb_link_##]">
+								<s_tb_count>TRACKBACK <span class="cnt">[##_article_rep_tb_cnt_##]</span></s_tb_count></a>
+								<span class="tbcm_vbar"> AND </span>
+								<a href="#rp" onclick="[##_article_rep_rp_link_##]">
+								<s_rp_count>COMMENT <span class="cnt">[##_article_rep_rp_cnt_##]</span></s_rp_count></a>
+							</div>
+							<div class="goup"><a href="#"><img src="./images/subup.gif" alt="" /></a></div>
+						</div>
+						<s_tb>
+							<div class="trackback">
+								<div class="trackback_address">[##_tb_address_##]</div>
+								<s_tb_container>
+									<ol>
+										<s_tb_rep>
+											<li id="[##_tb_rep_id_##]">
+												<h4><a href="[##_tb_rep_url_##]" onclick="window.open(this.href); return false" rel="external nofollow">[##_tb_rep_title_##]</a></h4>
+												<span class="from">FROM <span class="name">[##_tb_rep_site_##]</span></span>
+												<span class="date">[##_tb_rep_date_##]</span>
+												<a href="#" onclick="[##_tb_rep_onclick_delete_##]; return false" class="delete">&nbsp;<span>삭제</span></a>
+												<p>[##_tb_rep_desc_##]</p>
+											</li>
+										</s_tb_rep>
+									</ol>
+								</s_tb_container>
+							</div><!-- trackback close -->
+						</s_tb>
+						<s_rp>
+							<div class="comment">
+								<div class="comment_title">YOUR COMMENT IS THE CRITICAL SUCCESS FACTOR FOR THE QUALITY OF BLOG POST</div>
+								<div class="commentList">
+									<s_rp_container>
+										<ol>
+											<s_rp_rep>
+												<li id="[##_rp_rep_id_##]">
+													<div class="[##_rp_rep_class_##]">
+														<span class="name">[##_rp_rep_name_##]</span>
+														<span class="date"> [##_rp_rep_date_##]</span>
+														<span class="control">
+															<a href="[##_rp_rep_link_##]" class="address">&nbsp;<span>댓글주소</span></a>
+															<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;<span>수정/삭제</span></a>
+															<a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write">&nbsp;<span>댓글쓰기</span></a>
+														</span>
+														<p>[##_rp_rep_desc_##]</p>
+													</div>
+													<s_rp2_container>
+														<ul>
+															<s_rp2_rep>
+																<li id="[##_rp_rep_id_##]">
+																	<div class="[##_rp_rep_class_##]">
+																		<span class="name">[##_rp_rep_name_##]</span>
+																		<span class="date"> [##_rp_rep_date_##]</span>
+																		<span class="control">
+																			<a href="[##_rp_rep_link_##]" class="address">&nbsp;<span>댓글주소</span></a>
+																			<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;<span>수정/삭제</span></a>
+																		</span>
+																		<p>[##_rp_rep_desc_##]</p>
+																	</div>
+																</li>
+															</s_rp2_rep>
+														</ul>
+													</s_rp2_container>
+												</li>
+											</s_rp_rep>
+										</ol>
+									</s_rp_container>
+								</div><!-- commentList close -->
+
+								<s_rp_input_form>
+									<div class="commentWrite">
+										<s_rp_member>
+											<s_rp_guest>
+													<div class="input_writer">
+													<input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" />
+													<input type="password" name="[##_rp_input_password_##]" value="" /> <input type="text" class="homepage" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]"/>
+													</div>
+											</s_rp_guest>
+													<div class="input_sec">
+														<input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" /> <label for="[##_rp_input_is_secret_##]_[##_article_rep_id_##]">ONLY SHOW TO ADMIN</label>
+													</div>
+										</s_rp_member>
+											<textarea name="[##_rp_input_comment_##]" rows="10" cols="50"></textarea><br/>
+											<input type="image" src="./images/btn_reply.gif" onclick="[##_rp_onclick_submit_##]" class="submit" />
+									</div><!-- commentWrite close -->
+								</s_rp_input_form>
+							</div><!-- comment close -->
+					</s_rp><br/>
+				</div><!-- entry close -->
+			</s_article_rep>
+		</div>
+	</div>
+	<div id="category_dummy">
+		[##_category_list_##]
 	</div>
 </s_t3>
 </body>
+<script>
+$( document ).ready(function(){
+
+	//navigation bar
+	$('#category_view').prepend('<li><a href="/category">' + $('#category_dummy').children().children().children().html() + '</a></li>');
+	$('#category_view').append($('#category_dummy').children().children().children().next().html());
+	
+	var temp = $('.tt_menubar_logout').html();
+	if( temp.search('tistory.com/login') == -1){ //log-in
+		var a = $('.tt_menubar_link');
+		console.log($('.tt_menubar_link'));
+		$('#ttoolbar_view').append('<li><a class="tt_add_link" href="/toolbar/popup/link/">링크 추가</a></li>');
+		$('#ttoolbar_view').append('<li>' + $('.tt_menubar_random').html() + '</li>');
+		$('#ttoolbar_view').append('<li>' + $('.tt_menubar_logout').html() + '</li>');
+
+		temp = $('.tt_menubar_box_btn').html();
+		if( temp.search('http://delisalt.tistory.com/admin/') != -1){
+			$('#ttoolbar_view').prepend('<li><a href="http://delisalt.tistory.com/admin/">Admin</a></li>');
+			$('#ttoolbar_view').prepend('<li><a href="http://delisalt.tistory.com/admin/entry/post/">New</a></li>');
+		}
+	}else{ //log-out
+		$('#ttoolbar_view').append('<li><a href="https://www.tistory.com/login">Log in</a></li>');
+	}
+	
+	//article info
+	$('#article_title').append($('#article_title_dummy').html());
+	$('#article_category').append($('#article_category_dummy').html());
+	$('#article_date').append($('#article_date_dummy').html());
+	
+});
+</script>
 </html>
