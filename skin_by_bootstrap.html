@@ -1,48 +1,35 @@
 <!DOCTYPE html>
-<html lang="ko">
+<!--[if IE 7 ]>    <html lang="ko" class="no-js ie ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="ko" class="no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="ko" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="ko" class="no-js"> <!--<![endif]-->
 <!-- TO DO 
-	폰트 사이즈 결정 (h1, h2 크기)
+	폰트 사이즈 결정 (h1, h2 크기), 화면 위로이동 버튼
 -->
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script type="text/javascript" src='./images/jquery-1.11.2.min.js'></script>
-	<script type="text/javascript" src='./images/bootstrap.min.js'></script>
 	<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="./images/bootstrap.css" />
-<!--	<link rel="stylesheet" media="screen" type="text/css" href="./style.css" /> -->
+	<link rel="stylesheet" type="text/css" href="./images/prettify_delisalt.css" />
+	<link rel="stylesheet" media="screen" type="text/css" href="./style.css" />
 	<title>[##_title_##] :: [##_page_title_##]</title>
-	<style>
-		@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-		body { font-family: 'Nanum Gothic',Malgun Gothic,Tahoma; }
-		#logo_image { height: 40px; width: auto; margin: 5px 0px 5px 15px; cursor:pointer;}
-		#category_header { height: 200px; color:#d0e7d6; background: url('./images/bgcAbout.gif'); margin: 55px 0px 15px 0px;}
-		#article_category { text-align:left; font-size: 15px; width: 100%; margin-top:10px; } 
-		#article_category a, #article_admin a{ color:#d0e7d6; } 
-		#article_title { text-align:center; font-size: 30px; font-weight: bold; width: 100%; height: 120px; margin-top:20px; } 
-		#article_date { text-align:right; font-size: 20px; font-family: Raleway, 'Nanum Gothic'; width: 100%; } 
-		#article_admin { top: -50px; position: absolute; color:#d0e7d6;}
-		#category_dummy, #tistorytoolbarid, #article_category_dummy, #article_date_dummy, #article_title_dummy {display: none;}
-		.article { line-height: 190%; }
-		.article blockquote { padding: 0 10px; margin: 10px 0px 10px 20px; font-size: 15px;}  
-	</style>
 </head>
 <body>
 <s_t3>
-	<!-- Navigation Bar -->
-	<nav class="navbar navbar-default navbar-static-top">
+	<nav id="top_navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<button id="top_navbar_button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="./"><img id="logo_image" src="./images/logo.png" alt="고마워서 만든 블로그"></a>
+				<a id="logo_image" href="/"><img src="./images/logo.png" alt="고마워서 만든 블로그"></a>
 			</div>
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<div class="collapse navbar-collapse" id="bs-navbar-collapse">
 				<ul id="ttoolbar_view" class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">분류 보기<span class="caret"></span></a>
@@ -54,186 +41,273 @@
 			</div>
 		</div>
 	</nav>
-	<!-- Navigation Bar Close-->
-	<!-- Header -->
-	<div id="header">
+	<header>
 		<div id="category_header" class="container-fluid">
-			<div id="testt" class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-				<div id="article_category"><span class="glyphicon glyphicon-home"></span> / </div>
+			<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+				<div class="article-category-wrap-box"><div id="article_category"></div></div>
 				<div id="article_title"></div>
 				<div id="article_date"></div>
 			</div>
 		</div>
-	</div>
-	<!-- Header Close-->
+	</header>
 	<!-- Content-->
-	<div id="content" class="container-fluid">
+	<section id="content" class="container">
 		<div class="row">
+			<!-- 글 검색 목록 search-->
+			<s_list>
+				<div class="searchList col-md-9">
+					<h3 class="dummy"><span class="glyphicon glyphicon-search"></span> 글 검색 결과 <small>"<span id="search_word" class="fontRed">[##_list_conform_##]</span>"<span id="search_count" class="count">[##_list_count_##]</span></small></h3>
+					<ol id="search_list">
+						<s_list_rep>
+							<li>
+								<span class="date">[##_list_rep_regdate_##]</span>
+								<a href="[##_list_rep_link_##]">[##_list_rep_title_##]</a>
+								<span class="fontRed">[##_list_rep_rp_cnt_##]</span>
+							</li>
+						</s_list_rep>
+					</ol>
+				</div>
+			</s_list>
+
+			<s_tag>
+				<div class="taglog col-md-9">
+					<s_tag_rep>
+						<a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##]</a>
+					</s_tag_rep>
+				</div>
+			</s_tag>
+
+			<s_guest>
+				<div class="guestbook col-md-9">
+					<s_guest_input_form>
+						<div class="guestWrite">
+							<s_guest_member>
+								<s_guest_form>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="input-group">
+										  <span class="input-group-addon" id="rp-name-input"><i class="glyphicon glyphicon-user"></i></span>
+										  <input type="text" class="form-control" name="[##_guest_input_name_##]" placeholder="Name" aria-describedby="guest_input_name" value="[##_guest_name_##]">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group">
+										  <span class="input-group-addon" id="rp-pass-input"><i class="glyphicon glyphicon-lock"></i></span>
+										  <input type="text" class="form-control" name="[##_guest_input_password_##]" placeholder="Password" aria-describedby="guest-pass-input">
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="input-group">
+										  <span class="input-group-addon" id="rp-link-input"><i class="glyphicon glyphicon-home"></i></span>
+										  <input type="text" class="form-control" name="[##_guest_input_homepage_##]" placeholder="Your Site URL" aria-describedby="guest-link-input" value="[##_guest_homepage_##]">
+										</div>
+									</div>
+								</div>
+								</s_guest_form>
+							</s_guest_member>
+							<textarea id="rp-textarea" name="[##_guest_textarea_body_##]" rows="7"></textarea>
+							<button type="button" id="rp-textarea-submit" onclick="[##_guest_onclick_submit_##]" class="btn btn-success">흔적 남기기Save</button>
+						</div><!-- guestWrite close -->
+					</s_guest_input_form>
+					<s_guest_container>
+						<div class="guestList">
+							<ol id="guestList">
+								<s_guest_rep>
+									<li id="[##_guest_rep_id_##]">
+										<div class="[##_guest_rep_class_##]">
+											<div class="author-info-wrap">
+												<span class="name">[##_guest_rep_name_##]</span>
+												<span class="date"> [##_guest_rep_date_##]</span>
+											</div>
+											<span class="control">
+												<a href="#" onclick="[##_guest_rep_onclick_delete_##]" class="modify"><span class="glyphicon glyphicon-trash"></span></a>
+												<a href="#" onclick="[##_guest_rep_onclick_reply_##]" class="write"><span class="glyphicon glyphicon-pencil"></span></a>
+											</span>
+											<p>[##_guest_rep_desc_##]</p>
+										</div>
+										<s_guest_reply_container>
+											<ul>
+												<s_guest_reply_rep>
+													<li id="[##_guest_rep_id_##]">
+														<div class="[##_guest_rep_class_##]">
+															<div class="author-info-wrap">
+																<span class="name">[##_guest_rep_name_##]</span>
+																<span class="date"> [##_guest_rep_date_##]</span>
+															</div>
+															<span class="control">
+																<a href="#" onclick="[##_guest_rep_onclick_delete_##]" class="modify"><span class="glyphicon glyphicon-trash"></span></a>
+															</span>
+															<p>[##_guest_rep_desc_##]</p>
+														</div>
+													</li>
+												</s_guest_reply_rep>
+											</ul>
+										</s_guest_reply_container>
+									</li>
+								</s_guest_rep>
+							</ol>
+						</div><!-- guestList close -->
+					</s_guest_container>
+					<br/>
+				</div>
+				<!-- guestbook close -->
+			</s_guest>
+
 			<!-- PROTECTED ARTICLE -->
 			<s_article_protected>
-				<b class="rtop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
-				<div class="entryProtected">
+				<div class="entryProtected col-md-9">
 					<div class="titleWrap">
-						<h2><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h2>
-						<span class="date">[##_article_rep_date_##]</span>
+						<span id="s_article_title_dummy" class="dummy">[##_article_rep_title_##]</span>
+						<span id="s_article_date_dummy" class="dummy">[##_article_rep_date_##]</span>
 					</div>
-						<div class="protected_box">
-							<div class="text">
-								<p>PROTECTED ARTICLE. TYPE THE PASSWORD.</p>
-								<p><input id="[##_article_password_##]" name="[##_article_password_##]" type="password" onkeydown="if (event.keyCode == 13) [##_article_dissolve_##]" /> <input type="button" class="submit" value="SUBMIT" onclick="[##_article_dissolve_##]" /></p>
+					<div class="protected_box">
+						<div class="text">
+							<p>비밀글입니다. 비밀번호를 입력해주세요.</p>
+							<div class="input-group">
+							  <input type="text" class="form-control" id="[##_article_password_##]" name="[##_article_password_##]" placeholder="비밀번호" type="password" onkeydown="if (event.keyCode == 13) [##_article_dissolve_##]" aria-describedby="secret-article-password-input">
+							  <span class="input-group-btn">
+								<button class="btn btn-default" type="button" onclick="[##_article_dissolve_##]">확인</button>
+							  </span>
 							</div>
 						</div>
-						<div class="box_hblank2"></div>
+					</div>
 				</div>
-				<b class="rbottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
-				<div class="box_hblank1"></div>
 			</s_article_protected>
 
 			<!-- ARTICLE -->
 			<s_article_rep>
-				<div class="entry col-sm-9">
+				<article id="main_article" class="col-md-9">
 					<div class="titleWrap">
-						<span id="article_title_dummy">[##_article_rep_title_##]</span>
-						<span id="article_category_dummy"><a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a> </span>
-						<span id="article_date_dummy">[##_article_rep_date_##]</span>
+						<span id="article_title_dummy" class="dummy">[##_article_rep_title_##]</span>
+						<span id="article_category_dummy" class="dummy"><a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a> </span>
+						<span id="article_date_dummy" class="dummy">[##_article_rep_date_##]</span>
 						<s_ad_div>
 							<div id="article_admin">
 								<a href="[##_s_ad_m_link_##]">EDIT</a>::[##_s_ad_s1_label_##]::<a href="#" onclick="[##_s_ad_d_onclick_##]">DELETE</a>
 							</div>
 						</s_ad_div>
 					</div><!-- titleWrap close -->
-						<div class="article">
-							[##_article_rep_desc_##]
-						</div>
-						<s_tag_label>
-							<div class="tagTrail">[##_tag_label_rep_##]</div>
-						</s_tag_label>
-						<div class="actionTrail">
-							<div class="tbcm">
-								<a href="#tb" onclick="[##_article_rep_tb_link_##]">
-								<s_tb_count>TRACKBACK <span class="cnt">[##_article_rep_tb_cnt_##]</span></s_tb_count></a>
-								<span class="tbcm_vbar"> AND </span>
-								<a href="#rp" onclick="[##_article_rep_rp_link_##]">
-								<s_rp_count>COMMENT <span class="cnt">[##_article_rep_rp_cnt_##]</span></s_rp_count></a>
+					<div class="article">
+						[##_article_rep_desc_##]
+					</div>
+					<s_tag_label>
+						<div class="tag_label" ><span class="glyphicon glyphicon-tags"></span>&nbsp [##_tag_label_rep_##]</div>
+					</s_tag_label>
+					<div class="actionTrail">
+						<a href="#rp" onclick="[##_article_rep_rp_link_##]">
+						<s_rp_count>COMMENT <span class="cnt">[##_article_rep_rp_cnt_##]</span></s_rp_count></a>
+					</div>
+					<s_rp>
+					<div class="comment">
+						<div class="commentList">
+							<s_rp_container>
+							<ol id="rp_list">
+								<s_rp_rep>
+								<li id="[##_rp_rep_id_##]">
+									<div class="[##_rp_rep_class_##]">
+										<div class="author-info-wrap">
+											<span class="name">[##_rp_rep_name_##]</span>
+											<span class="date"> [##_rp_rep_date_##]</span>
+										</div>
+										<span class="control">
+											<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify"><span class="glyphicon glyphicon-trash"></span></a>
+											<a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write"><span class="glyphicon glyphicon-pencil"></span></a>
+										</span>
+										<p>[##_rp_rep_desc_##]</p>
+									</div>
+									<s_rp2_container>
+									<ul>
+										<s_rp2_rep>
+										<li id="[##_rp_rep_id_##]">
+											<div class="[##_rp_rep_class_##]">
+												<div class="author-info-wrap">
+													<span class="name">[##_rp_rep_name_##]</span>
+													<span class="date"> [##_rp_rep_date_##]</span>
+												</div>
+												<span class="control">
+													<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify"><span class="glyphicon glyphicon-trash"></span></a>
+												</span>
+												<p>[##_rp_rep_desc_##]</p>
+											</div>
+										</li>
+										</s_rp2_rep>
+									</ul>
+									</s_rp2_container>
+								</li>
+								<hr>
+								</s_rp_rep>
+							</ol>
+							</s_rp_container>
+						</div><!-- commentList close -->
+						<s_rp_input_form>
+						<div class="commentWrite">
+							<s_rp_member>
+							<div class="row">
+								<s_rp_guest>
+									<div class="col-sm-6">
+										<div class="input-group">
+										  <span class="input-group-addon" id="rp-name-input"><i class="glyphicon glyphicon-user"></i></span>
+										  <input type="text" class="form-control" name="[##_rp_input_name_##]" placeholder="Name" aria-describedby="reply_input_name" value="[##_guest_name_##]">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group">
+										  <span class="input-group-addon" id="rp-pass-input"><i class="glyphicon glyphicon-lock"></i></span>
+										  <input type="text" class="form-control" name="[##_rp_input_password_##]" placeholder="Password" aria-describedby="reply-pass-input">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="input-group">
+										  <span class="input-group-addon" id="rp-link-input"><i class="glyphicon glyphicon-home"></i></span>
+										  <input type="text" class="form-control" name="[##_rp_input_homepage_##]" placeholder="Your Site URL" aria-describedby="reply-link-input" value="[##_guest_homepage_##]">
+										</div>
+									</div>
+								</s_rp_guest>
+								<div class="col-sm-6">
+									<div class="input-group">
+									  <span class="input-group-addon" id="rp-secret-input"><input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" /></span>
+									  <input type="text" class="form-control" placeholder="비밀 댓글로 남기기" aria-describedby="rp-link-input" readonly value="[##_guest_homepage_##]">
+									</div>
+								</div>
 							</div>
-							<div class="goup"><a href="#"><img src="./images/subup.gif" alt="" /></a></div>
-						</div>
-						<s_tb>
-							<div class="trackback">
-								<div class="trackback_address">[##_tb_address_##]</div>
-								<s_tb_container>
-									<ol>
-										<s_tb_rep>
-											<li id="[##_tb_rep_id_##]">
-												<h4><a href="[##_tb_rep_url_##]" onclick="window.open(this.href); return false" rel="external nofollow">[##_tb_rep_title_##]</a></h4>
-												<span class="from">FROM <span class="name">[##_tb_rep_site_##]</span></span>
-												<span class="date">[##_tb_rep_date_##]</span>
-												<a href="#" onclick="[##_tb_rep_onclick_delete_##]; return false" class="delete">&nbsp;<span>삭제</span></a>
-												<p>[##_tb_rep_desc_##]</p>
-											</li>
-										</s_tb_rep>
-									</ol>
-								</s_tb_container>
-							</div><!-- trackback close -->
-						</s_tb>
-						<s_rp>
-							<div class="comment">
-								<div class="comment_title">YOUR COMMENT IS THE CRITICAL SUCCESS FACTOR FOR THE QUALITY OF BLOG POST</div>
-								<div class="commentList">
-									<s_rp_container>
-										<ol>
-											<s_rp_rep>
-												<li id="[##_rp_rep_id_##]">
-													<div class="[##_rp_rep_class_##]">
-														<span class="name">[##_rp_rep_name_##]</span>
-														<span class="date"> [##_rp_rep_date_##]</span>
-														<span class="control">
-															<a href="[##_rp_rep_link_##]" class="address">&nbsp;<span>댓글주소</span></a>
-															<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;<span>수정/삭제</span></a>
-															<a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write">&nbsp;<span>댓글쓰기</span></a>
-														</span>
-														<p>[##_rp_rep_desc_##]</p>
-													</div>
-													<s_rp2_container>
-														<ul>
-															<s_rp2_rep>
-																<li id="[##_rp_rep_id_##]">
-																	<div class="[##_rp_rep_class_##]">
-																		<span class="name">[##_rp_rep_name_##]</span>
-																		<span class="date"> [##_rp_rep_date_##]</span>
-																		<span class="control">
-																			<a href="[##_rp_rep_link_##]" class="address">&nbsp;<span>댓글주소</span></a>
-																			<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">&nbsp;<span>수정/삭제</span></a>
-																		</span>
-																		<p>[##_rp_rep_desc_##]</p>
-																	</div>
-																</li>
-															</s_rp2_rep>
-														</ul>
-													</s_rp2_container>
-												</li>
-											</s_rp_rep>
-										</ol>
-									</s_rp_container>
-								</div><!-- commentList close -->
-
-								<s_rp_input_form>
-									<div class="commentWrite">
-										<s_rp_member>
-											<s_rp_guest>
-													<div class="input_writer">
-													<input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" />
-													<input type="password" name="[##_rp_input_password_##]" value="" /> <input type="text" class="homepage" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]"/>
-													</div>
-											</s_rp_guest>
-													<div class="input_sec">
-														<input type="checkbox" name="[##_rp_input_is_secret_##]" class="checkbox" /> <label for="[##_rp_input_is_secret_##]_[##_article_rep_id_##]">ONLY SHOW TO ADMIN</label>
-													</div>
-										</s_rp_member>
-											<textarea name="[##_rp_input_comment_##]" rows="10" cols="50"></textarea><br/>
-											<input type="image" src="./images/btn_reply.gif" onclick="[##_rp_onclick_submit_##]" class="submit" />
-									</div><!-- commentWrite close -->
-								</s_rp_input_form>
-							</div><!-- comment close -->
-					</s_rp><br/>
-				</div><!-- entry close -->
+							</s_rp_member>
+								<textarea id="rp-textarea" name="[##_rp_input_comment_##]" rows="10"></textarea>
+								<button type="button" id="rp-textarea-submit" onclick="[##_rp_onclick_submit_##]" class="btn btn-success">댓글 저장Save</button>
+						</div><!-- commentWrite close -->
+						</s_rp_input_form>
+					</div><!-- comment close -->
+					</s_rp>
+				</article>
 			</s_article_rep>
+			<!-- 페이징 -->
+			<div id="footer">
+				<s_paging>
+					<div class="paging">
+						<a [##_prev_page_##] class="[##_no_more_prev_##]"><span class="glyphicon glyphicon-chevron-left"></span>이전</a>
+						<span class="numbox">
+							<s_paging_rep>
+							<a [##_paging_rep_link_##] class="num"> [##_paging_rep_link_num_##]</a>
+							</s_paging_rep>
+						</span>
+						<a [##_next_page_##] class="[##_no_more_next_##]">다음<span class="glyphicon glyphicon-chevron-right"></span></a>
+					</div>
+				</s_paging>
+			</div>
 		</div>
-	</div>
+	</section>
+	<!-- COPYRIGHT -->
+	<footer class="bs-docs-footer" role="contentinfo">
+		<p>본 사이트는 <a href="http://www.tistory.com" onclick="window.open(this.href); return false">TISTORY</a>를 통해 서비스하고 있습니다</p>
+		<p><a href="[##_guestbook_link_##]">사이트 운영자에게 글 남기기</a></p>
+		<p>Copyright © 2014 맛소금 All rights reserved</p>
+	</footer>
 	<div id="category_dummy">
 		[##_category_list_##]
 	</div>
 </s_t3>
 </body>
-<script>
-$( document ).ready(function(){
-
-	//navigation bar
-	$('#category_view').prepend('<li><a href="/category">' + $('#category_dummy').children().children().children().html() + '</a></li>');
-	$('#category_view').append($('#category_dummy').children().children().children().next().html());
-	
-	var temp = $('.tt_menubar_logout').html();
-	if( temp.search('tistory.com/login') == -1){ //log-in
-		var a = $('.tt_menubar_link');
-		console.log($('.tt_menubar_link'));
-		$('#ttoolbar_view').append('<li><a class="tt_add_link" href="/toolbar/popup/link/">링크 추가</a></li>');
-		$('#ttoolbar_view').append('<li>' + $('.tt_menubar_random').html() + '</li>');
-		$('#ttoolbar_view').append('<li>' + $('.tt_menubar_logout').html() + '</li>');
-
-		temp = $('.tt_menubar_box_btn').html();
-		if( temp.search('http://delisalt.tistory.com/admin/') != -1){
-			$('#ttoolbar_view').prepend('<li><a href="http://delisalt.tistory.com/admin/">Admin</a></li>');
-			$('#ttoolbar_view').prepend('<li><a href="http://delisalt.tistory.com/admin/entry/post/">New</a></li>');
-		}
-	}else{ //log-out
-		$('#ttoolbar_view').append('<li><a href="https://www.tistory.com/login">Log in</a></li>');
-	}
-	
-	//article info
-	$('#article_title').append($('#article_title_dummy').html());
-	$('#article_category').append($('#article_category_dummy').html());
-	$('#article_date').append($('#article_date_dummy').html());
-	
-});
-</script>
+<script type="text/javascript" src='./images/jquery-1.11.2.min.js'></script>
+<script type="text/javascript" src='./images/bootstrap.min.js'></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<script type="text/javascript" src='./images/delisalt_bootstrap.js'></script>
 </html>
