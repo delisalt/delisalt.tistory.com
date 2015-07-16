@@ -1,20 +1,20 @@
 $( document ).ready(function(){
 
 	//navigation bar
-	$('#category_view').prepend('<li><a href="/category">' + $('#category_dummy').children().children().children().html() + '</a></li>');
-	$('#category_view').append($('#category_dummy').children().children().children().next().html());
+	$('#category_view').prepend('<li><a href="/category">' + $('#category-list').children().children().children().html() + '</a></li>');
+	$('#category_view').append($('#category-list').children().children().children().next().html());
 	
 	var temp = $('.tt_menubar_logout').html();
 	var url = location.href;
 	if( temp.search('tistory.com/login') == -1){ //log-in
 		var a = $('.tt_menubar_link');
-		$('#ttoolbar_view').append('<li><a class="tt_add_link" href="/toolbar/popup/link/">링크 추가</a></li>');
 		$('#ttoolbar_view').append('<li>' + $('.tt_menubar_logout').html() + '</li>');
+		$('#ttoolbar_view').prepend('<li><a title="add blog to Link" class="tt_add_link" href="/toolbar/popup/link/"><span class="glyphicon glyphicon-link"></span></a></li>');
 
 		temp = $('.tt_menubar_box_btn').html();
 		if( temp.search('http://delisalt.tistory.com/admin/') != -1){
-			$('#ttoolbar_view').prepend('<li><a href="http://delisalt.tistory.com/admin/">Admin</a></li>');
-			$('#ttoolbar_view').prepend('<li><a href="http://delisalt.tistory.com/admin/entry/post/">New</a></li>');
+			$('#ttoolbar_view').prepend('<li><a title="admin acount" href="http://delisalt.tistory.com/admin/"><span class="glyphicon glyphicon-user"></span></a></li>');
+			$('#ttoolbar_view').prepend('<li><a title="new post" href="http://delisalt.tistory.com/admin/entry/post/"><span class="glyphicon glyphicon-plus"></span></a></li>');
 		}
 	}else{ //log-out
 		$('#ttoolbar_view').append('<li><a href="https://www.tistory.com/login">Log in</a></li>');

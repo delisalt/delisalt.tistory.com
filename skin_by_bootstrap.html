@@ -37,6 +37,14 @@
 							<li class="divider"></li>
 						</ul>
 					</li>
+					<s_search>
+					<form id="nav-search-form" class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }" class="form-control nav-form-input" placeholder="Search">
+							<button type="submit" onclick="[##_search_onclick_submit_##]" class="btn btn-default btn-search"><span class="glyphicon glyphicon-search"></span></button>
+						</div>
+					</form>
+					</s_search>
 				</ul>
 			</div>
 		</div>
@@ -279,20 +287,42 @@
 					</s_rp>
 				</article>
 			</s_article_rep>
-			<!-- 페이징 -->
-			<div id="footer">
-				<s_paging>
-					<div class="paging">
-						<a [##_prev_page_##] class="[##_no_more_prev_##]"><span class="glyphicon glyphicon-chevron-left"></span>이전</a>
-						<span class="numbox">
-							<s_paging_rep>
-							<a [##_paging_rep_link_##] class="num"> [##_paging_rep_link_num_##]</a>
-							</s_paging_rep>
-						</span>
-						<a [##_next_page_##] class="[##_no_more_next_##]">다음<span class="glyphicon glyphicon-chevron-right"></span></a>
+			<!-- 사이드바 -->
+			<div id="sidebar" class="sidebar col-md-3">
+				<s_sidebar>
+					<s_sidebar_element>
+					<!-- 블로그 설명 모듈 -->
+					<div class="panel panel-default sidePanel">
+						<div class="panel-body" id="introduce">
+							<img src="[##_image_##]" alt="블로그 이미지" />
+							[##_desc_##]
+						</div>
 					</div>
-				</s_paging>
+					</s_sidebar_element>
+					<s_sidebar_element>
+					<!-- 카테고리 모듈 -->
+						<div class="panel panel-default sidePanel">
+							<div id="category-list" class="panel-body">
+								[##_category_list_##]
+							</div>
+						</div>
+					</s_sidebar_element>
+				</s_sidebar>
 			</div>
+		</div>
+		<!-- 페이징 -->
+		<div id="footer">
+			<s_paging>
+				<div class="paging">
+					<a [##_prev_page_##] class="[##_no_more_prev_##]"><span class="glyphicon glyphicon-chevron-left"></span>이전</a>
+					<span class="numbox">
+						<s_paging_rep>
+						<a [##_paging_rep_link_##] class="num"> [##_paging_rep_link_num_##]</a>
+						</s_paging_rep>
+					</span>
+					<a [##_next_page_##] class="[##_no_more_next_##]">다음<span class="glyphicon glyphicon-chevron-right"></span></a>
+				</div>
+			</s_paging>
 		</div>
 	</section>
 	<!-- COPYRIGHT -->
@@ -301,9 +331,6 @@
 		<p><a href="[##_guestbook_link_##]">사이트 운영자에게 글 남기기</a></p>
 		<p>Copyright © 2014 맛소금 All rights reserved</p>
 	</footer>
-	<div id="category_dummy">
-		[##_category_list_##]
-	</div>
 </s_t3>
 </body>
 <script type="text/javascript" src='./images/jquery-1.11.2.min.js'></script>
