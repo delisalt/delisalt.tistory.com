@@ -9,12 +9,11 @@ section { padding-bottom: 170px; min-height: 100%}
 .article-category-wrap-box { font-size: 18px; width: 100%; margin-top:25px; font-family: Raleway, 'malgun gothic';} 
 #article_category a, #article_admin a{ color:#fff; text-decoration: none}
 #article_title { text-align:center; font-size: 35px; width: 100%; margin-top:15px; margin-bottom:15px; font-family: 'Nanum Myeongjo', 'Nanum Gothic'; }
-#article_date { text-align:right; font-size: 16px; font-family: Raleway, 'malgun gothic'; width: 100%; margin-bottom:30px; opacity:0.8;} 
+#article_date { text-align:right; font-size: 16px; font-family: Raleway, 'malgun gothic'; width: 100%; margin-bottom:30px; opacity:0.7;} 
 #article_admin { top: -35px; position: absolute; color:#E5F1E8; font-size:12px;}
-#article_category { display:inline-block; border-bottom: 2px solid #fff; opacity: 0.8 }
+#article_category { display:inline-block; border-bottom: 2px solid #fff; opacity: 0.75 }
 #tistorytoolbarid, .dummy{display: none;}
 .article { line-height: 190%; }
-.article blockquote { padding: 0 10px; margin: 10px 0px 10px 20px; font-size: 15px;}  
 .tag_label { width: 100%; text-align: right; }
 
 /* bootstrap overriding */
@@ -96,7 +95,7 @@ section { padding-bottom: 170px; min-height: 100%}
   border: 0px;
   border-radius: 0px;
 }
-
+#content-section { padding-left: 10px; padding-right:10px; }
 .btn-search { border: 1px solid white; color:#777}
 .btn-search:hover, .btn-search:focus{ border-color: #ffffff; background-color: #ffffff; color:#333}
 #nav-search-form { margin:3px 0 3px 0;}
@@ -118,7 +117,6 @@ section { padding-bottom: 170px; min-height: 100%}
 .actionTrail {margin: 5px 0 5px 0; }
 .input-group { margin-bottom: 10px; }
 #rp-textarea, #rp-textarea-submit { width:98%; margin:1%; border-radius: 4px; }
-
 #search_list li{ margin-top: 7px; }
 
 /* Tags */
@@ -133,8 +131,9 @@ section { padding-bottom: 170px; min-height: 100%}
 .guestWrite { margin: 15px 0 15px 0; }
 
 /* Introduce */
-#introduce {font-size: 13px}
-#introduce img{ width:100%; max-width:300px; height:auto;}
+#introduce {font-size: 13px; text-align: center;}
+#introduce img{ width:100%; max-width:500px; height:auto;}
+#introduce div { margin-top: 15px; }
 
 /* Category */
 #category-list a:first{ font-weight:bold }
@@ -152,6 +151,50 @@ section { padding-bottom: 170px; min-height: 100%}
 .fontRed { color: #ED5150; }
 .ft-size-15 { font-size:15px }
 .sidePanel { margin:0; border:0; box-shadow:0 0 0; -webkit-box-shadow:0 0 0; }
+#content-section p { margin-bottom : 12px }
+h2{ font-size:25px; border-left:5px solid #33a654; padding-left:10px;}
+h3{ font-size:20px; border-left:5px solid #BDE2C9; padding-left:10px;}
+
+h1, h2, h3, h4, h5, h6{ line-height:1.8; }
+
+blockquote {
+  font-family: Georgia, malgun gothic;
+  font-size: 18px;
+  font-style: italic;
+  margin: 10px 0 10px 40px;
+  padding: 10px 0 10px 20px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+  border: 0;
+}
+
+blockquote:before {
+display: block;
+content: "\201C";
+font-size: 80px;
+position: absolute;
+left: -20px;
+top: -20px;
+color: #7a7a7a;
+}
+
+blockquote cite {
+color: #999999;
+font-size: 14px;
+display: block;
+margin-top: 5px;
+}
+ 
+blockquote cite:before {
+content: "\2014 \2009";
+}
+
+/* Over-riding */
+#TixIntroMap { width: 100% !important; }
+#content-section img {max-width:100% !important; height:auto; }
+#content-section .imageblock {max-width: 100% !important; height: auto;}
+#content-section iframe {max-width:100% !important;}
 
 /* Footer */
 #footer { width: 100%; clear: both; text-align: center;}
