@@ -21,7 +21,9 @@ $( document ).ready(function(){
 	}
 
 	//fill title
-	if(url.indexOf('delisalt.tistory.com/search') != -1 || url.indexOf('delisalt.tistory.com/tag/') != -1){
+	if(url.indexOf('delisalt.tistory.com/search') != -1 
+		|| url.indexOf('delisalt.tistory.com/tag/') != -1 
+		|| url.indexOf('delisalt.tistory.com/archive/') != -1){
 		//search list
 		$('#article_category').html('&nbsp&nbsp<span class="glyphicon glyphicon-search ft-size-15"></span>');
 		$('#article_category').prepend($('#search_word').text());
