@@ -21,7 +21,9 @@ $( document ).ready(function(){
 	}
 
 	//fill title
-	if(url.indexOf('delisalt.tistory.com/search') != -1 || url.indexOf('delisalt.tistory.com/tag/') != -1){
+	if(url.indexOf('delisalt.tistory.com/search') != -1 
+		|| url.indexOf('delisalt.tistory.com/tag/') != -1 
+		|| url.indexOf('delisalt.tistory.com/archive/') != -1){
 		//search list
 		$('#article_category').html('&nbsp&nbsp<span class="glyphicon glyphicon-search ft-size-15"></span>');
 		$('#article_category').prepend($('#search_word').text());
@@ -46,10 +48,16 @@ $( document ).ready(function(){
 		$('#article_category').append($('#article_category_dummy').html());
 		$('#article_date').append($('#article_date_dummy').html());
 		
-		if(typeof $('#article_title_dummy').html() == 'undefined'){ //s_article case.
-			$('#article_title').append($('#s_article_title_dummy').html());
-			$('#article_date').append($('#s_article_date_dummy').html());
-			$('#article_category').html('<span class="glyphicon glyphicon-lock"></span>');
+		if(typeof $('#article_title_dummy').html() == 'undefined'){ 
+			if(typeof $('#s_article_title_dummy').html() == 'undefined'){ //t_edition case.
+				$('#article_title').append('고마워서 만든 블로그입니다!');
+				$('#article_date').append('by 맛소금');
+				$('#article_category').html('반갑습니다');
+			}else{ //s_article case.
+				$('#article_title').append($('#s_article_title_dummy').html());
+				$('#article_date').append($('#s_article_date_dummy').html());
+				$('#article_category').html('<span class="glyphicon glyphicon-lock"></span>');
+			}
 		}
 	}
 });

@@ -1,0 +1,35 @@
+<!-- 
+	수정내용
+	1. img 크기가 다르게 디스플레이 되는 것을 해결하기위해 img 태그를 없애고, 상위 tag background-image로 이미지를 넣어주었습니다.
+	2. 반응형으로 변경하기 위해서 css 수정하고, tedition-list-img, tedition-list-desc 클래스를 추가해 주었습니다.
+	3. 높이 180px로 고정 스타일 태그 추가.
+-->
+<h2 class="tt-item-title"><span class="tt-item-title-bg"><span class="tt-item-title-inner">[##_item_title_##]</span></span></h2>
+<ul class="tt-wrap-item">
+    <s_tabloid>
+		<s_article_rep>
+            <li class="tt-span-12 [##_is_last_item_##][##_clear_##]">
+                <a href="[##_article_rep_link_##]" title="[##_article_rep_title_##]" 
+                class="tt-wrap-thumb-link tt-span-8-border tedition-list-img"
+				style="background-image:url(http://[##_article_rep_thumb_host_##]/[##_thumb_type_##]/[##_article_rep_thumb_hash_##]); background-size: cover; background-position: 50% 50%; height:180px">
+<!--                	<img 
+					class="tt-post-thumb" 
+					style="[##_thumb_style_##]"  
+					src="http://[##_article_rep_thumb_host_##]/[##_thumb_type_##]/[##_article_rep_thumb_hash_##]" alt="[##_article_rep_title_##]"/> -->
+				</a>
+                <div class="tt-span-4 tt-last tedition-list-desc">
+                    <p class=tt-post-title "tt-span-8 tt-last">
+                        <a href="[##_article_rep_link_##]">[##_article_rep_title_excerpt_##]</a>
+                    </p>
+                    <p class="tt-post-summary"><a href="[##_article_rep_link_##]">[##_article_rep_desc_excerpt_##]</a></p>
+                    <p class="tt-post-etcinfo">
+                        <span class="tt-post-category"><a href="[##_article_rep_category_link_##]">[##_article_rep_category_##]</a></span>
+		                <span class="tt-post-author">[##_article_rep_author_##]</span>
+		            	<span class="tt-post-date">[##_article_rep_date_##]</span>
+						<span class="tt-post-comment">[##_article_rep_comment_cnt_##] comment</span>
+                    </p>
+                </div>
+            </li>
+        </s_article_rep>
+    </s_tabloid>
+</ul>
