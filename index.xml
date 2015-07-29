@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+	<information>
+		<name>맛소금 겉옷</name>
+		<version>1.0.0</version>
+		<description>
+			<![CDATA[
+				가독성과 속도를 중시하여 만든 깔끔한 티스토리 스킨입니다. 반응형 스킨이므로 티스토리 모바일웹 스킨은 OFF로 설정하십시오.
+				티스토리의 모든 기능이 들어가 있는것은 아닙니다. 필요한 부분은 추가로 설정해서 사용하세요~
+				넣을까 말까 고민하게 만드는 기능 중에 있으면 좋은 것은 다 뺐습니다.
+			]]>
+		</description>
+		<license>
+			<![CDATA[CC BY-NC-SA, 저작자표시-비영리-동일조건변경허락. 원작자 표기를 유지하고 2차적 저작물에도 동일한 라이선스를 적용하는 한에서 비상업적 목적의 변경, 재가공을 허락합니다.]]>
+		</license>
+	</information>
+	<author>
+		<name>맛소금</name>
+		<homepage>http://blog.delisalt.me</homepage>
+		<email>salt.jeong@gmail.com</email>
+	</author> 
+	<default>
+		<recentEntries>5</recentEntries>
+		<recentComments>5</recentComments>
+		<recentTrackbacks>5</recentTrackbacks>
+		<itemsOnGuestbook>10</itemsOnGuestbook>
+		<tagsInCloud>30</tagsInCloud>
+		<sortInCloud>3</sortInCloud>
+		<expandComment>1</expandComment>
+		<expandTrackback>0</expandTrackback>
+		<lengthOfRecentNotice>35</lengthOfRecentNotice>
+		<lengthOfRecentEntry>35</lengthOfRecentEntry>
+		<lengthOfRecentComment>35</lengthOfRecentComment>
+		<lengthOfRecentTrackback>35</lengthOfRecentTrackback>
+		<lengthOfLink>40</lengthOfLink>
+		<showListOnCategory>1</showListOnCategory>
+		<showListOnArchive>1</showListOnArchive>
+		<commentMessage>
+		</commentMessage>
+		<trackbackMessage>
+		</trackbackMessage>
+		<contentWidth>650</contentWidth>
+	</default>
+</skin>
