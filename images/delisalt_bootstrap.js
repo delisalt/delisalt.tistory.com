@@ -28,34 +28,34 @@ $( document ).ready(function(){
 		//search list
 		$('#article_category').html('&nbsp;&nbsp;<span class="glyphicon glyphicon-search ft-size-15"></span>');
 		$('#article_category').prepend($('#search_word').text());
-		$('#article_title').text('글 검색 결과');
+		$('#article_title>h1').text('글 검색 결과');
 		$('#article_date').append('총 ' + $('#search_count').text() + '개');
 	}else if(url.indexOf('/tag') != -1){
 		//tag list
 		$('#article_category').html('');
-		$('#article_title').text('꼬리표tag 목록');
+		$('#article_title>h1').text('꼬리표tag 목록');
 	}else if(url.indexOf('/guestbook') != -1){
 		//guestbook
 		$('#article_category').html('');
-		$('#article_title').text('오고간 흔적들');
+		$('#article_title>h1').text('오고간 흔적들');
 	}else if(url.indexOf('/category') != -1 ){
 		//category
 		$('#article_category').prepend($('#search_word').text());
-		$('#article_title').text('분류별 검색 결과');
+		$('#article_title>h1').text('분류별 검색 결과');
 		$('#article_date').append('총 ' + $('#search_count').text() + '개');
 	}else{
 		//article info
-		$('#article_title').append($('#article_title_dummy').html());
+		$('#article_title>h1').append($('#article_title_dummy').html());
 		$('#article_category').append($('#article_category_dummy').html());
 		$('#article_date').append($('#article_date_dummy').html());
 		
 		if(typeof $('#article_title_dummy').html() == 'undefined'){ 
 			if(typeof $('#s_article_title_dummy').html() == 'undefined'){ //t_edition case.
-				$('#article_title').append('고마워서 만든 블로그입니다!');
+				$('#article_title>h1').append('고마워서 만든 블로그입니다!');
 				$('#article_date').append('by 맛소금');
 				$('#article_category').html('반갑습니다');
 			}else{ //s_article case.
-				$('#article_title').append($('#s_article_title_dummy').html());
+				$('#article_title>h1').append($('#s_article_title_dummy').html());
 				$('#article_date').append($('#s_article_date_dummy').html());
 				$('#article_category').html('<span class="glyphicon glyphicon-lock"></span>');
 			}
