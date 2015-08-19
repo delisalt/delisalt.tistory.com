@@ -14,7 +14,7 @@ section { padding-bottom: 170px; min-height: 100%}
 #article_category { display:inline-block; border-bottom: 2px solid #fff; opacity: 0.75 }
 #tistorytoolbarid, .dummy{display: none;}
 .article { line-height: 190%; }
-.tag_label { width: 100%; text-align: right; }
+.tag_label { width: 100%; text-align: right;  margin-bottom:20px}
 
 /* bootstrap overriding */
 #category_view > li a {
@@ -97,6 +97,9 @@ section { padding-bottom: 170px; min-height: 100%}
   border-radius: 0px;
 }
 #content-section { padding-left: 10px; padding-right:10px; }
+@media (min-width: 992px) {
+	#content-section { padding-left: 0px; padding-right:0px; }
+}
 .btn-search { border: 1px solid white; color:#777}
 .btn-search:hover, .btn-search:focus{ border-color: #ffffff; background-color: #ffffff; color:#333}
 #nav-search-form { margin:3px 0 3px 0;}
@@ -159,7 +162,9 @@ h2{ font-size:25px; border-left:5px solid #33a654; padding-left:10px;}
 h3{ font-size:20px; border-left:5px solid #BDE2C9; padding-left:10px;}
 
 h1, h2, h3, h4, h5, h6{ line-height:1.8; }
-
+@media (max-width: 450px) {
+	h1 { font-size:30px; }
+}
 blockquote {
   font-family: Georgia, malgun gothic;
   font-size: 18px;
@@ -199,7 +204,7 @@ content: "\2014 \2009";
 #tedition-tabloid-list{ width: 100%; }
 .tedition-list-img{ width: 35% !important}
 .tedition-list-desc{ width: 60% !important}
-
+.tedition-tabloid-div {overflow:hidden}
 @media (min-width: 768px) {
 	#tedition-tabloid-list{ width: 70%; margin: auto !important; }
 }

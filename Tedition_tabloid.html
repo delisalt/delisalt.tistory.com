@@ -3,12 +3,13 @@
 	1. img 크기가 다르게 디스플레이 되는 것을 해결하기위해 img 태그를 없애고, 상위 tag background-image로 이미지를 넣어주었습니다.
 	2. 반응형으로 변경하기 위해서 css 수정하고, tedition-tabloid-list ID를 추가해 주었습니다.
 	3. 높이 350px로 고정 style 태그 추가.
+	4. 반응형 수정, tedition-tabloid-div 추가, overflow:hidden 속성
 -->
 <h2 class="tt-item-title"><span class="tt-item-title-bg"><span class="tt-item-title-inner">[##_item_title_##]</span></span></h2>
 <ul id="tedition-tabloid-list" class="tt-wrap-item">
   <s_tabloid>
     <li class="tt-item-point-0 tt-span-12 tt-clear">
-      <div class="tt-wrap-post tt-span-12" style="background-image:url(http://[##_article_rep_thumb_host[0]_##]/[##_thumb_type[0]_##]/[##_article_rep_thumb_hash[0]_##]); background-size: cover; background-position: 50% 50%;">
+      <div class="tt-wrap-post tt-span-12 tedition-tabloid-div" style="background-image:url(http://[##_article_rep_thumb_host[0]_##]/[##_thumb_type[0]_##]/[##_article_rep_thumb_hash[0]_##]); background-size: cover; background-position: 50% 50%;">
         <a href="[##_article_rep_link[0]_##]" title="[##_article_rep_title_excerpt[0]_##]"
           class="tt-wrap-thumb-link tt-span-12-border tt-span-12-[##_thumb_ratio[0]_##] tt-last" style="border:0; height:350px">
 <!--          <img
@@ -31,7 +32,7 @@
       </div>
     </li>
     <li class="tt-item-point-1 tt-span-12 tt-clear" style="display: none;">
-      <div class="tt-wrap-post tt-span-12"  style="background-image:url(http://[##_article_rep_thumb_host[1]_##]/[##_thumb_type[1]_##]/[##_article_rep_thumb_hash[1]_##]); background-size: cover; background-position: 50% 50%;">
+      <div class="tt-wrap-post tt-span-12 tedition-tabloid-div"  style="background-image:url(http://[##_article_rep_thumb_host[1]_##]/[##_thumb_type[1]_##]/[##_article_rep_thumb_hash[1]_##]); background-size: cover; background-position: 50% 50%;">
         <a href="[##_article_rep_link[1]_##]" title="[##_article_rep_title_excerpt[1]_##]"
           class="tt-wrap-thumb-link tt-span-12-border tt-span-12-[##_thumb_ratio[1]_##] tt-last" style="border:0; height:350px">
 <!--          <img
@@ -54,7 +55,7 @@
       </div>
     </li>
     <li class="tt-item-point-2 tt-span-12 tt-clear" style="display: none;">
-      <div class="tt-wrap-post tt-span-12"  style="background-image:url(http://[##_article_rep_thumb_host[2]_##]/[##_thumb_type[2]_##]/[##_article_rep_thumb_hash[2]_##]); background-size: cover; background-position: 50% 50%;">
+      <div class="tt-wrap-post tt-span-12 tedition-tabloid-div"  style="background-image:url(http://[##_article_rep_thumb_host[2]_##]/[##_thumb_type[2]_##]/[##_article_rep_thumb_hash[2]_##]); background-size: cover; background-position: 50% 50%;">
         <a href="[##_article_rep_link[2]_##]" title="[##_article_rep_title_excerpt[2]_##]"
           class="tt-wrap-thumb-link tt-span-12-border tt-span-12-[##_thumb_ratio[2]_##] tt-last" style="border:0; height:350px">
 <!--          <img
@@ -77,7 +78,7 @@
       </div>
     </li>
     <li class="tt-item-point-3 tt-span-12 tt-clear" style="display: none;">
-      <div class="tt-wrap-post tt-span-12"  style="background-image:url(http://[##_article_rep_thumb_host[3]_##]/[##_thumb_type[3]_##]/[##_article_rep_thumb_hash[3]_##]); background-size: cover; background-position: 50% 50%;">
+      <div class="tt-wrap-post tt-span-12 tedition-tabloid-div"  style="background-image:url(http://[##_article_rep_thumb_host[3]_##]/[##_thumb_type[3]_##]/[##_article_rep_thumb_hash[3]_##]); background-size: cover; background-position: 50% 50%;">
         <a href="[##_article_rep_link[3]_##]" title="[##_article_rep_title_excerpt[3]_##]"
           class="tt-wrap-thumb-link tt-span-12-border tt-span-12-[##_thumb_ratio[3]_##] tt-last" style="border:0; height:350px">
 <!--          <img
