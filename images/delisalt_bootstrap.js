@@ -1,5 +1,16 @@
+var $root = $('html, body');
 $( document ).ready(function(){
 	var host = "http://blog.delisalt.me"; // TO BE CHANGED
+
+	$('.anchor').click(function() {
+		var href = $.attr(this, 'href');
+		$root.animate({
+			scrollTop: $(href).offset().top-60
+		}, 500, function () {
+			window.location.hash = href;
+		});
+		return false;
+	});
 	
 	//navigation bar
 	$('#category_view').prepend('<li><a href="/category">' + $('#category-list').children().children().children().html() + '</a></li>');
