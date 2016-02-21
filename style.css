@@ -14,7 +14,7 @@ section { padding-bottom: 170px; min-height: 100%}
 #article_category { display:inline-block; border-bottom: 2px solid #fff; opacity: 0.75 }
 #tistorytoolbarid, .dummy{display: none;}
 .article { line-height: 190%; }
-.tag_label { width: 100%; text-align: right;  margin-bottom:20px}
+.tag_label { width: 100%; text-align: right; margin-bottom:20px}
 
 /* bootstrap overriding */
 #category_view > li a {
@@ -169,7 +169,7 @@ section { padding-bottom: 170px; min-height: 100%}
 .ft-size-15 { font-size:15px }
 .ft-size-14 { font-size:14px !important}
 .sidePanel { margin:0; border:0; box-shadow:0 0 0; -webkit-box-shadow:0 0 0; }
-#content-section p { margin-bottom : 15px }
+#content-section p { margin-bottom : 15px ; word-break:break-all; }
 h2{ font-size:22px; border-left:5px solid #33a654; padding-left:10px;}
 h3{ font-size:20px; border-left:5px solid #BDE2C9; padding-left:10px;}
 
@@ -184,7 +184,7 @@ blockquote {
   font-style: italic;
   margin: 10px 0 10px 25px;
   padding: 10px 0 10px 20px;
-  line-height: 1.45;
+  line-height: 1.5;
   position: relative;
   color: #383838;
   border: 0;
@@ -213,18 +213,19 @@ content: "\2014 \2009";
 /* T edition*/
 #tedition-tabloid-height{ height:350px !important}
 #ttCanvas, .tt-span-12 { width: 100% !important }
+.tedition-tabloid-div {overflow:hidden}
 
 #tedition-tabloid-list{ width: 100%; }
-.tedition-list-img{ width: 35% !important}
-.tedition-list-desc{ width: 60% !important}
-.tedition-tabloid-div {overflow:hidden}
+.tedition-list-img{ width: 35% !important; }
+.tedition-list-desc{ width: 60% !important; }
+
 @media (min-width: 768px) {
 	#tedition-tabloid-list{ width: 70%; margin: auto !important; }
 }
 
 @media (max-width: 450px) {
-	.tedition-list-img{ width: 100% !important; margin-right:0 !important;}
-	.tedition-list-desc{ width: 100% !important}
+	.tedition-list-img{ width: 100% !important; margin-right:0 !important; margin-bottom: 10px !important;}
+	.tedition-list-desc{ width: 100% !important; margin-bottom: 15px !important;}
 }
 /* Over-riding */
 #TixIntroMap { width: 100% !important; }
