@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 @import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-body { font-family: "Noto Sans DemiLight", "Malgun Gothic",Tahoma; font-size:16px;}
+body { font-family: "Malgun Gothic", Tahoma; font-size:18px;}
 section { padding-bottom: 170px; min-height: 100%}
 #logo_image img{ height: 40px; width: auto; cursor:pointer;}
 #logo_image { position: fixed; left: 30px; top: 0px;}
@@ -14,6 +14,8 @@ section { padding-bottom: 170px; min-height: 100%}
 #article_category { display:inline-block; border-bottom: 2px solid #fff; opacity: 0.75 }
 #tistorytoolbarid, .dummy{display: none;}
 .article { line-height: 190%; }
+.article p{ font-family: "Iropke Batang", "Malgun Gothic", Tahoma;}
+.article b, .article strong {box-shadow: inset 0 -6px 0 #FFEE58;}
 .tag_label { width: 100%; text-align: right; margin-bottom:20px}
 
 /* bootstrap overriding */

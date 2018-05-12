@@ -21,11 +21,11 @@
 
 @media screen {
   .str {
-    color: #dd1144;
+    color: #013e83;
   }
 
   .kwd {
-    color: #333333;
+    color: #d73a49;
   }
 
   .com {
@@ -49,7 +49,7 @@
   }
 
   .clo {
-    color: #333333;
+    color: #005cc5;
   }
 
   .tag {
