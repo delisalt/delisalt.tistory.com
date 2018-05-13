@@ -10,6 +10,3 @@ first blog skin for responsive web design
 ### 1.0.0
 1. Bootstrap v3.3.4 을 기반으로 만들었습니다.
 2. 반응형 구조입니다.
-
-###TO DO
-1. 한글 웹폰트 변경
